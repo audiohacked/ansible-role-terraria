@@ -6,7 +6,8 @@ Type=forking
 User=terraria
 KillMode=none
 ExecStart=/usr/bin/screen -dmS terraria /bin/bash -c "/opt/terraria/current/Linux/TerrariaServer.bin.x86_64 -config /opt/terraria/current/Linux/serverconfig.txt"
-ExecStop=/usr/local/bin/terrariad exit
+ExecStop=/usr/bin/screen -S terraria -X stuff "exit^M"
+#ExecStop=/usr/local/bin/terrariad exit
 
 [Install]
 WantedBy=multi-user.target
