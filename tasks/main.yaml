@@ -1,7 +1,7 @@
 ---
 
 - name: Update repositories cache and install Requirements packages
-  apt:
+  package:
     name: "{{ item }}"
     update_cache: yes
     state: present
@@ -67,6 +67,7 @@
     src: "/opt/terraria/{{ version }}"
     dest: "/opt/terraria/current"
     state: link
+    force: yes
 
 - name: Set Permission Server Binary
   file:
